@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: test
+  name: test
+  namespace: default
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: test

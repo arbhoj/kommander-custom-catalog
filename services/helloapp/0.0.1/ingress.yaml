@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: kommander-traefik
+    traefik.ingress.kubernetes.io/router.middlewares: "kommander-flux-test-stripprefixes@kubernetescrd"
+    traefik.ingress.kubernetes.io/router.tls: "true"  
+  name: test
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: test
+            port:
+              number: 80
+        path: /test
+        pathType: ImplementationSpecific

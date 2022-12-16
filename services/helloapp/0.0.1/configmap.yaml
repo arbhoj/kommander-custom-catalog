@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mainpage
+  namespace: default
+data:
+  index.html: |
+    <html>
+        <body>
+            <h1>Powered by HelloKitty</h1>
+            <h1>D2iQ Kubernetes Platform (DKP) - The leading independent kubernetes platform!</h1>
+            <img src="https://github.com/arbhoj/sample-k8s-app/raw/master/images/D2iq_large.jpeg" width:100px;height:200px>
+        </body>
+    </html>
